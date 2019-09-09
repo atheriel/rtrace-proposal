@@ -1,6 +1,6 @@
-# The Problem
 <!-- 
 Outlining the issue / weak point / problem to be solved by this proposal. This should be a compelling section that sets the reader up for the next section - the proposed solution!
+# Motivation
 
 It is important to cover:
 
@@ -10,4 +10,56 @@ It is important to cover:
  - [ ] Why it should be tackled
 -->
 
+How do R programmers identify and track down performance issues in their code?
+As usual, we can and should try to collect data to answer these questions.
 
+Many R users will be familiar with using the built-in sampling profiler
+`Rprof()` to generate data on what their code is doing, and there are several
+excellent tools to facilitate understanding these samples (or serve as a
+front-end), including the [**profvis**](https://rstudio.github.io/profvis/)
+package.
+
+However, the reach of `Rprof()` and related tools is limited: the profiler is
+"internal", in the sense that it must be manually switched on to work, either
+during interactive work (for example, to profile an individual function), or
+perhaps by modifying the script to include `Rprof()` calls before running it
+again.
+
+At present, there is no way to collect useful information on R code that cannot
+by manually instrumented with `Rprof()` or that is already running. This makes
+it very difficult to answer questions like the following:
+
+* How does an R application that you didn't write -- and therefore have limited
+  understanding of how to instrument -- spend its time?
+
+* An R program is misbehaving in production, taking far longer to run (or do its
+  work) than we expected or experienced in other environments. What is it doing?
+
+Instead, R programmers usually resort to trying to reproduce these problems in
+local, interactive sessions.
+
+Of course, it's not quite the case that we have *no* visibility into
+already-running code; for instance, we could measure CPU usage by the process in
+question, or time how long it takes to finish. But these methods don't provide
+any real insight as to where the problem might be -- for that, we need the kind
+of information about the R stack that `Rprof()` provides.
+
+Many existing programing languages have one or more "external" profilers
+available, for example:
+
+* The Linux system profiler `perf` will print sampled C/C++ stack traces.
+* The `jstack` program for Java (among others).
+* The Windows `VSPerfCmd` tool for C#/.NET applications.
+* [Pyflame](https://github.com/uber/pyflame) for Python; and
+* [rbspy](https://rbspy.github.io/) for Ruby.
+
+All of these programs can "attach" (in one way or another) to a running process
+and inspect its memory at some frequency to understand what the current
+language-specific stack looks like. The last two are especially appealing,
+because they, like R, are interpreted languages, and show that it should be
+possible to produce a similar profiler for R.
+
+Moreover, external sampling profilers have proven extremely useful for
+diagnosing and fixing performance issues (or other bugs) in production
+environments. As R moves more and more into this space, I believe this could
+provide a substantial benefit to the community.
