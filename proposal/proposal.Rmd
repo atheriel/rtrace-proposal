@@ -8,6 +8,15 @@ This is where the proposal should be outlined.
 At a high-level address what your proposal is and how it will address the problem identified. Highlight any benefits to the R Community that follow from solving the problem. This should be your most compelling section.
 -->
 
+Project member Aaron Jacobs wrote a demo-quality external sampling profiler for R
+earlier this year, which is available [on GitHub](https://github.com/atheriel/rtrace).
+
+This demo (1) proves that this is indeed possible for R; and (2) points the way
+to the technologies that are needed to make it work.
+
+We propose to turn this demo-quality project into a robust set of tools that can
+be used by the wider community.
+
 ## Detail
 <!--
 Go into more detail about the specifics of the project and it delivers against the problem.
@@ -18,3 +27,50 @@ Depending on project type the detail section should include:
  - [ ] Architecture
  - [ ] Assumptions
 -->
+
+In order to make this tool more widely useful, we propose to break in into two
+components: a command-line tool for users and a C library that backs this
+program and other interfaces. This will involve:
+
+* Refactoring the existing code to be more robust, handle more diverse R
+  environments, and report errors to the caller; and
+
+* Be sufficiently portable to work on any Linux distribution and any
+  sufficiently recent version of R.
+
+It is our view that a tool for R users is unlikely to be successful if it does
+not have an R-level interface. To that end, the second major goal of this
+project would be to create an R package backed by the same library. Provided
+that this library is relatively portable and written in C, we believe that such
+a package would be admissible to CRAN.
+
+The delivery of a C library, command-line program, and R package that work under
+Linux is the minimum viable product (MVP) of this proposal.
+
+In addition to this MVP, we propose to "port" the tool so that it works in two
+other common R environments:
+
+* Under Windows. Although there are likely fewer "production" deployments of R
+  on Windows, it is a major platform for R users. The
+  [rbspy](https://rbspy.github.io/) profiler for Ruby has shown that it is
+  possible to support Windows in this way; we feel we could learn from them and
+  make the same approach work for this project.
+
+* Under Docker. Although Docker is, of course, Linux, its use of process
+  namespaces render the existing demo nonfunctional, and Dockerized R is very
+  likely the medium-term future of production in R. The
+  [Pyflame](https://github.com/uber/pyflame) profiler for Python has shown that
+  it is possible to circumvent the namespace issues; we feel we could make the
+  same approach work for this project.
+
+## Alternatives
+
+A new, external sampling profiler is not the only way to achieve live, opt-in
+profiling of running R programs. It would also be possible to modify R itself to
+switch on profiling in response to some kind of IPC, such as a Unix signal.
+
+However, there are major drawbacks to such an undertaking: it would require
+modifying R itself, perhaps in ways that have an undesirable impact on its
+complexity or performance, and would only allow code running under new versions
+of R (perhaps quite some time from now) to be profiled in this way. As a result,
+we believe a new tool is a better way to accomplish the project's goals.
