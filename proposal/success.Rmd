@@ -18,6 +18,19 @@ How will we know when success is achieved, what markers can we use along the way
 How could this be extended / developed in the future by yourself and/or the community in general?
 -->
 
+Our suggested future work would include
+
+* Packaging of the command-line tool for various Linux distributions, first and
+  foremost the Debian project (and downstream distributions, including Ubuntu).
+  This would improve the ease with which this tool would be available in these
+  environments.
+
+* Support for macOS. Although it is unlikely that many users are running
+  production workloads on macOS, it is a popular distribution for R developers.
+
+* Support for mixed-mode sampling of C/C++ and R stacks, as originally
+  envisioned by the [Jointprof project](https://r-prof.github.io/jointprof/).
+
 ## Key risks
 <!-- 
 What sort of things could come up that can delay or break the project?
