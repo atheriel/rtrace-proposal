@@ -1,6 +1,6 @@
 ---
-title: "`r proposal`"
-author: "`r author`"
+title: "ISC Proposal: An External R Sampling Profiler"
+author: "Aaron Jacobs"
 date: "`r Sys.Date()`"
 output: html_document
 ---
