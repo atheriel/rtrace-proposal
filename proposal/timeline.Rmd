@@ -18,6 +18,18 @@ Covering the actual delivery of the project this section should provide at least
 Including target dates is really important as you need to be committed and the ISC need to have a means of tracking delivery
 -->
 
+The timeline of the project is intended to be short:
+
+* Within one month. Delivery of the proposed MVP: refactoring of the demo into a
+  portable C program and library for Linux, plus an R package interface.
+
+* Within the second month. Delivery of the proposed ports to Windows and Docker,
+  plus a substantive blog post for the project and submission of the R package
+  to CRAN.
+
+Given the plan to work nearly full-time on this proposal, we believe this should
+be possible.
+
 ## Other aspects
 <!--
 Covering non-technical activities like on-going publicity, paper preparation, discussion groups etc. that might be required to facilitate successful delivery of the project.
@@ -28,3 +40,11 @@ Covering non-technical activities like on-going publicity, paper preparation, di
  - [ ] UseR!
  - [ ] ISC meetings
 -->
+
+In order to publicise the project and ensure that R users can actively benefit
+from it, we propose writing a blog post, ideally for the R Consortium,
+explaining how to use the tools provided by the project.
+
+Since the goals of the project are relatively narrow and use cases are fairly
+narrow, we believe a single tutorial/evangelist-style post will be the most
+appropriate reference point for the community.
