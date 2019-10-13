@@ -10,7 +10,7 @@ FULL_REPO="https://$GH_TOKEN$GH_REPO"
 git config --global user.name "Aaron Jacobs"
 git config --global user.email "atheriel@gmail.com"
 
-make
+make html pdf
 
 cd out
 git init
