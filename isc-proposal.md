@@ -119,13 +119,35 @@ At a high-level address what your proposal is and how it will address the proble
 
 Project member Aaron Jacobs wrote a demo-quality external sampling
 profiler for R earlier this year, which is available [on
-GitHub](https://github.com/atheriel/rtrace).
+GitHub](https://github.com/atheriel/rtrace). The demo is also capable of
+outputting “mixed-mode” combinations of the R and C/C++ stacks, in line
+with the goals of the **jointprof** package.
 
 This demo (1) proves that this is indeed possible for R; and (2) points
 the way to the technologies that are needed to make it work.
 
 We propose to turn this demo-quality project into a robust set of tools
-that can be used by the wider community.
+that can be used by the wider community, and especially in
+**jointprof**.
+
+A larger goal of this proposal is to help move the **jointprof** project
+forward. Provided that this project can meet its goals, the resulting
+library could replace the use of `pprof` in the **jointprof** package,
+giving that project three desirable features that it does not currently
+have:
+
+  - Support for profiling external R programs, which would unlock the
+    ability to [profile multiprocess-style parallel
+    programs](https://github.com/r-prof/jointprof/issues/10).
+
+  - [Support for
+    Windows](https://github.com/r-prof/jointprof/issues/29); and
+
+  - [Better profiling in the presence of R’s lazy
+    evaluation](https://github.com/r-prof/jointprof/issues/34).
+
+In addition, it would remove the need for end users to install and
+manage a Go toolchain.
 
 ## Detail
 
@@ -139,9 +161,9 @@ Depending on project type the detail section should include:
  - [ ] Assumptions
 -->
 
-In order to make this tool more widely useful, we propose to break in
-into two components: a command-line tool for users and a C library that
-backs this program and other interfaces. This will involve:
+In order to make the existing demo more widely useful, we propose to
+break it into two components: a command-line tool for users and a C
+library that backs this program and other interfaces. This will involve:
 
   - Refactoring the existing code to be more robust, handle more diverse
     R environments, and report errors to the caller; and
@@ -155,20 +177,42 @@ goal of this project would be to create an R package backed by the same
 library. Provided that this library is relatively portable and written
 in C, we believe that such a package would be admissible to CRAN.
 
-The delivery of a C library, command-line program, and R package that
-work under Linux is the minimum viable product (MVP) of this proposal.
+The delivery
+of
 
-In addition to this MVP, we propose to “port” the tool so that it works
-in two other common R environments:
+<!-- > \(1) a C library, (2) a command-line program; and (3) an R package for Linux -->
 
-  - Under Windows. Although there are likely fewer “production”
+<!-- > that supports sampling R stacks -->
+
+1.  (i) a C library, (ii) a command-line program; and (iii) an R package
+    for Linux
+
+is **the minimum viable product (MVP) of this proposal**.
+
+In addition to this MVP, the secondary goal of this proposal
+is
+
+<!-- > to add sampling of C/C++ stacks to this library, incorporating the lessons -->
+
+<!-- > learned from the **jointprof** package -->
+
+2.  To add sampling of C/C++ stacks to this library, incorporating the
+    lessons learned from the **jointprof** package.
+
+Sampling of C/C++ stacks is already part of the existing demo; however,
+collating these and the R-level stacks does not yet work reliably.
+
+Finally, we propose to “port” the tool so that it works in two other
+common R environments:
+
+3.  Under Windows. Although there are likely fewer “production”
     deployments of R on Windows, it is a major platform for R users. The
     [rbspy](https://rbspy.github.io/) profiler for Ruby has shown that
     it is possible to support Windows in this way; we feel we could
     learn from them and make the same approach work for this project.
 
-  - Under Docker. Although Docker is, of course, Linux, its use of
-    process namespaces render the existing demo nonfunctional, and
+4.  Under Docker. Although Docker is, of course, Linux, its use of
+    process namespaces render the existing demo nonfunctional. Yet
     Dockerized R is very likely the medium-term future of production in
     R. The [Pyflame](https://github.com/uber/pyflame) profiler for
     Python has shown that it is possible to circumvent the namespace
@@ -338,9 +382,8 @@ Our suggested future work would include
     running production workloads on macOS, it is a popular distribution
     for R developers.
 
-  - Support for mixed-mode sampling of C/C++ and R stacks, as originally
-    envisioned by the [Jointprof
-    project](https://r-prof.github.io/jointprof/).
+  - Support for Solaris and other less-popular platforms, such as
+    FreeBSD.
 
 ## Key risks
 

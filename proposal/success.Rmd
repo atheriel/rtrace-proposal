@@ -28,8 +28,7 @@ Our suggested future work would include
 * Support for macOS. Although it is unlikely that many users are running
   production workloads on macOS, it is a popular distribution for R developers.
 
-* Support for mixed-mode sampling of C/C++ and R stacks, as originally
-  envisioned by the [Jointprof project](https://r-prof.github.io/jointprof/).
+* Support for Solaris and other less-popular platforms, such as FreeBSD.
 
 ## Key risks
 <!-- 
