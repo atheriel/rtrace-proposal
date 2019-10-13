@@ -293,25 +293,28 @@ be the most appropriate reference point for the community.
 An idea of what is required to make the project actually happen
 -->
 
-Since the deliverables of this proposal are all code, the requirements
-of this project are the funding required to cover development costs.
-
-No special tools, tech, or equipment beyond the existing resources of
-project members will be required.
-
-<!-- ## People -->
+## People
 
 <!--
 Who needs to be involved, what's the proposed structure, what will it take to get their involvement?
 -->
 
-<!-- ## Processes -->
+The large majority of the work is expected to be carried out by project
+member Aaron Jacobs. Kirill Müller has volunteered to help oversee
+integrating the result of this work into the **jointprof** package.
+
+## Processes
 
 <!-- 
 What processes need to be put in place e.g. codes of conduct, regular ISC meetings, handover to the community at large?
 -->
 
-<!-- ## Tools & Tech -->
+We propose that the natural home of this project for future contributors
+is the [`r-prof` organization](https://github.com/r-prof), which is the
+umbrella group that currently oversees the **profile** and **jointprof**
+packages.
+
+## Tools & Tech
 
 <!--
 What is going to be needed to deliver this project? 
@@ -321,6 +324,9 @@ Will cloud computing be used - if yes are there are necessary components that wi
 Are there tools or tech that don't exist that will be produced to facilitate the project?
 -->
 
+No special tools, tech, or equipment beyond the existing resources of
+project members will be required.
+
 ## Funding
 
 <!-- 
@@ -329,23 +335,29 @@ Are there tools or tech that don't exist that will be produced to facilitate the
 -->
 
 We request a total of $8,500 to support the equivalent of 1.5 months
-salary for project member Aaron Jacobs. He has arranged with his
-employer to spend up to 80 percent of his time over the course of eight
-weeks on unpaid leave to work on this project, should it receive
-funding. His employer will continue to permit access to existing compute
-resources to him during this time.
+salary for project member Aaron Jacobs.
+
+## Summary
+
+<!--
+A summary of the requirements that contextualises the costs
+-->
+
+The main requirement for this project is funding to cover development
+costs, as all of the deliverables of this proposal are code and software
+artifacts.
+
+Project member Aaron Jacobs has arranged with his employer to spend up
+to 80 percent of his time over the course of eight weeks on unpaid leave
+to work on this project, should it receive funding. His employer will
+continue to permit access to existing compute resources to him during
+this time.
 
 The award size in this case is similar to those of the successful
 [sftraj](https://github.com/mablab/sftraj-proposal) and [Licensing
 R](https://github.com/ThinkR-open/isc-proposal-licence) proposals,
 namely that it essentially covers the cost of salary, and over a similar
 period.
-
-<!-- ## Summary -->
-
-<!--
-A summary of the requirements that contextualises the costs
--->
 
 # Success
 
