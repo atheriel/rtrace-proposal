@@ -8,10 +8,31 @@ Projects should have a definition of done that is measurable, and a thorough und
 What does success look like? 
 -->
 
+Success can be defined as full delivery of the artifacts and outcomes discussed
+in the [Technical delivery](#technical-delivery) section above. Partial success
+can also be defined in this manner as delivery of some but not all these
+artifacts and outcomes.
+
 ## Measuring success
 <!-- 
 How will we know when success is achieved, what markers can we use along the way 
 -->
+
+As mentioned in the [Technical delivery](#technical-delivery) section, we can
+use the following markers:
+
+* Release of version 0.1 of the proposed MVP library, command-line program, and
+  R package.
+
+* Release of the MVP artifacts with support for Windows and Docker.
+
+* Release of the MVP artifacts with support for mixed-mode R and C/C++ stack
+  sampling.
+
+* Release of a version of **jointprof** using the new library to CRAN.
+
+* Finally, release of e.g. blog posts, screencasts, or other public testimonials
+  on the use of this project.
 
 ## Future work
 <!-- 
@@ -40,3 +61,17 @@ What sort of things could come up that can delay or break the project?
  - [ ] Costs
 
 -->
+
+* It may turn out to be too difficult to support either R stack sampling or
+  C/C++ stack sampling on Windows. This would be a major blow to the aims of the
+  project, but the MVP of this proposal would still be deliverable.
+
+* It may turn out to be too difficult or impossible to fully reconcile the R and
+  C/C++ stacks when outputting mixed-mode samples. If this were to be the case,
+  it should be possible to either fall back on R-only sampling or perform
+  best-effort reconciliation.
+
+* Lastly, the project could face significant delays if project member Aaron
+  Jacobs is unable to work on implementing the deliverables. Should this come to
+  pass, it may be possible to scope out the implementation work for assignment
+  to another member of the community.

@@ -246,6 +246,28 @@ Covering the planning phase, this section should provide a relatively detailed p
  - [ ] Reporting framework
 -->
 
+The existing code is already on GitHub, and that platform is intended to
+be where all development takes place. Since the goals of this proposal
+are relatively well-defined, GitHub issues can be used to track progress
+and provide public visibility of progress. Moreover, the use of GitHub
+will give us access to tools such as Travis-CI, which can be used to
+ensure that the code will work under a variety of environments.
+
+In addition, we have corresponded with Kirill Müller on the relationship
+between the proposed project and other packages and tools in the R
+ecosystem. Because of this, we believe that our views of future success
+are aligned with other projects and proposals, and that there are a few
+points of external reference against which to gauge the relevance of
+design or technical decisions.
+
+### Licensing
+
+Since the demo already contains portions of the source code of R itself
+and this is unlikely to change in its transition to a library, it is
+very likely it must fall under the same license, GPLv2. This is a common
+license in the R community, so this choice is not expected to cause any
+friction.
+
 ## Technical delivery
 
 <!--
@@ -256,13 +278,21 @@ Including target dates is really important as you need to be committed and the I
 
 The timeline of the project is intended to be short:
 
-  - Within one month. Delivery of the proposed MVP: refactoring of the
-    demo into a portable C program and library for Linux, plus an R
-    package interface.
+1.  Delivery of the proposed MVP: refactoring of the demo into a
+    portable C program and library for Linux, plus an R package
+    interface. Estimated to take up to two weeks. This would be
+    signified by a “0.1” release of these artifacts.
 
-  - Within the second month. Delivery of the proposed ports to Windows
-    and Docker, plus a substantive blog post for the project and
-    submission of the R package to CRAN.
+2.  Delivery of the proposed ports to Windows and Docker of the R
+    sampling portion of the library. Estimated to take up to two weeks.
+
+3.  Delivery of support for mixed-mode R and C/C++ stack sampling, again
+    Linux-first. Estimated to take up to a month, and would be signified
+    by a second release of the artifacts.
+
+4.  Delivery of wrap-up work, including a substantive blog post,
+    integration into **jointprof**, and submission of one or more
+    packages to CRAN. Estimated to take up to two weeks.
 
 Given the plan to work nearly full-time on this proposal, we believe
 this should be possible.
@@ -286,6 +316,11 @@ Consortium, explaining how to use the tools provided by the project.
 Since the goals of the project are relatively narrow and use cases are
 fairly narrow, we believe a single tutorial/evangelist-style post will
 be the most appropriate reference point for the community.
+
+In addition, the authors of this proposal intend to publicize this work
+at all available opportunity: by submitting talks to UseR\!, producing
+blog posts, demos, use cases, and possibly screencasts to be shared on
+Twitter and other platforms.
 
 # Requirements
 
@@ -371,11 +406,32 @@ Projects should have a definition of done that is measurable, and a thorough und
 What does success look like? 
 -->
 
+Success can be defined as full delivery of the artifacts and outcomes
+discussed in the [Technical delivery](#technical-delivery) section
+above. Partial success can also be defined in this manner as delivery of
+some but not all these artifacts and outcomes.
+
 ## Measuring success
 
 <!-- 
 How will we know when success is achieved, what markers can we use along the way 
 -->
+
+As mentioned in the [Technical delivery](#technical-delivery) section,
+we can use the following markers:
+
+  - Release of version 0.1 of the proposed MVP library, command-line
+    program, and R package.
+
+  - Release of the MVP artifacts with support for Windows and Docker.
+
+  - Release of the MVP artifacts with support for mixed-mode R and C/C++
+    stack sampling.
+
+  - Release of a version of **jointprof** using the new library to CRAN.
+
+  - Finally, release of e.g. blog posts, screencasts, or other public
+    testimonials on the use of this project.
 
 ## Future work
 
@@ -408,3 +464,19 @@ What sort of things could come up that can delay or break the project?
  - [ ] Costs
 
 -->
+
+  - It may turn out to be too difficult to support either R stack
+    sampling or C/C++ stack sampling on Windows. This would be a major
+    blow to the aims of the project, but the MVP of this proposal would
+    still be deliverable.
+
+  - It may turn out to be too difficult or impossible to fully reconcile
+    the R and C/C++ stacks when outputting mixed-mode samples. If this
+    were to be the case, it should be possible to either fall back on
+    R-only sampling or perform best-effort reconciliation.
+
+  - Lastly, the project could face significant delays if project member
+    Aaron Jacobs is unable to work on implementing the deliverables.
+    Should this come to pass, it may be possible to scope out the
+    implementation work for assignment to another member of the
+    community.
