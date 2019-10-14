@@ -35,6 +35,8 @@ Who has been given the opportunity to provide feedback on the proposal? This sho
     between this project and the
     [**jointprof**](https://github.com/r-prof/jointprof) package.
 
+  - **Jeroen Ooms**, on technical feasibility of a Windows port.
+
 # Motivation
 
 <!-- 

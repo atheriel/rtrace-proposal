@@ -78,7 +78,10 @@ In addition to this MVP, the secondary goal of this proposal is
    learned from the **jointprof** package.
 
 Sampling of C/C++ stacks is already part of the existing demo; however,
-collating these and the R-level stacks does not yet work reliably.
+collating these and the R-level stacks does not yet work reliably. In addition,
+we are unsure of whether the existing approach can be made to work on non-Linux
+platforms; Jeroen Ooms has provided some guidance on this question and possible
+alternatives.
 
 Finally, we propose to "port" the tool so that it works in two other common R
 environments:
