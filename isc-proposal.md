@@ -205,19 +205,19 @@ collating these and the R-level stacks does not yet work reliably.
 Finally, we propose to “port” the tool so that it works in two other
 common R environments:
 
-3.  Under Windows. Although there are likely fewer “production”
-    deployments of R on Windows, it is a major platform for R users. The
-    [rbspy](https://rbspy.github.io/) profiler for Ruby has shown that
-    it is possible to support Windows in this way; we feel we could
-    learn from them and make the same approach work for this project.
-
-4.  Under Docker. Although Docker is, of course, Linux, its use of
+3.  Under Docker. Although Docker is, of course, Linux, its use of
     process namespaces render the existing demo nonfunctional. Yet
     Dockerized R is very likely the medium-term future of production in
     R. The [Pyflame](https://github.com/uber/pyflame) profiler for
     Python has shown that it is possible to circumvent the namespace
     issues; we feel we could make the same approach work for this
     project.
+
+4.  Under Windows. Although there are likely fewer “production”
+    deployments of R on Windows, it is a major platform for R users. The
+    [rbspy](https://rbspy.github.io/) profiler for Ruby has shown that
+    it is possible to support Windows in this way; we feel we could
+    learn from them and make the same approach work for this project.
 
 ## Alternatives
 
@@ -283,14 +283,17 @@ The timeline of the project is intended to be short:
     interface. Estimated to take up to two weeks. This would be
     signified by a “0.1” release of these artifacts.
 
-2.  Delivery of the proposed ports to Windows and Docker of the R
-    sampling portion of the library. Estimated to take up to two weeks.
+2.  Delivery of the proposed port to Docker. Estimated to take a few
+    days.
 
-3.  Delivery of support for mixed-mode R and C/C++ stack sampling, again
+3.  Delivery of the proposed port to Windows of the R sampling portion
+    of the library. Estimated to take up to two weeks.
+
+4.  Delivery of support for mixed-mode R and C/C++ stack sampling, again
     Linux-first. Estimated to take up to a month, and would be signified
     by a second release of the artifacts.
 
-4.  Delivery of wrap-up work, including a substantive blog post,
+5.  Delivery of wrap-up work, including a substantive blog post,
     integration into **jointprof**, and submission of one or more
     packages to CRAN. Estimated to take up to two weeks.
 
@@ -423,7 +426,9 @@ we can use the following markers:
   - Release of version 0.1 of the proposed MVP library, command-line
     program, and R package.
 
-  - Release of the MVP artifacts with support for Windows and Docker.
+  - Release of the MVP artifacts with support for Docker.
+
+  - Release of the MVP artifacts with support for Windows.
 
   - Release of the MVP artifacts with support for mixed-mode R and C/C++
     stack sampling.

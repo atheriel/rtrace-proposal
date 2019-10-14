@@ -44,14 +44,16 @@ The timeline of the project is intended to be short:
    up to two weeks. This would be signified by a "0.1" release of these
    artifacts.
 
-2. Delivery of the proposed ports to Windows and Docker of the R sampling
-   portion of the library. Estimated to take up to two weeks.
+2. Delivery of the proposed port to Docker. Estimated to take a few days.
 
-3. Delivery of support for mixed-mode R and C/C++ stack sampling, again
+3. Delivery of the proposed port to Windows of the R sampling portion of the
+   library. Estimated to take up to two weeks.
+
+4. Delivery of support for mixed-mode R and C/C++ stack sampling, again
    Linux-first. Estimated to take up to a month, and would be signified by a
    second release of the artifacts.
 
-4. Delivery of wrap-up work, including a substantive blog post, integration into
+5. Delivery of wrap-up work, including a substantive blog post, integration into
    **jointprof**, and submission of one or more packages to CRAN. Estimated to
    take up to two weeks.
 

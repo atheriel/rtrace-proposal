@@ -24,7 +24,9 @@ use the following markers:
 * Release of version 0.1 of the proposed MVP library, command-line program, and
   R package.
 
-* Release of the MVP artifacts with support for Windows and Docker.
+* Release of the MVP artifacts with support for Docker.
+
+* Release of the MVP artifacts with support for Windows.
 
 * Release of the MVP artifacts with support for mixed-mode R and C/C++ stack
   sampling.

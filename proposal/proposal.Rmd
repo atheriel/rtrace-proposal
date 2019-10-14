@@ -83,18 +83,18 @@ collating these and the R-level stacks does not yet work reliably.
 Finally, we propose to "port" the tool so that it works in two other common R
 environments:
 
-3. Under Windows. Although there are likely fewer "production" deployments of R
-   on Windows, it is a major platform for R users. The
-   [rbspy](https://rbspy.github.io/) profiler for Ruby has shown that it is
-   possible to support Windows in this way; we feel we could learn from them and
-   make the same approach work for this project.
-
-4. Under Docker. Although Docker is, of course, Linux, its use of process
+3. Under Docker. Although Docker is, of course, Linux, its use of process
    namespaces render the existing demo nonfunctional. Yet Dockerized R is very
    likely the medium-term future of production in R. The
    [Pyflame](https://github.com/uber/pyflame) profiler for Python has shown that
    it is possible to circumvent the namespace issues; we feel we could make the
    same approach work for this project.
+
+4. Under Windows. Although there are likely fewer "production" deployments of R
+   on Windows, it is a major platform for R users. The
+   [rbspy](https://rbspy.github.io/) profiler for Ruby has shown that it is
+   possible to support Windows in this way; we feel we could learn from them and
+   make the same approach work for this project.
 
 ## Alternatives
 
