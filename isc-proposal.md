@@ -219,6 +219,11 @@ common R environments:
     it is possible to support Windows in this way; we feel we could
     learn from them and make the same approach work for this project.
 
+## Priorities
+
+The authors of this proposal are open to comments from the reviewers on
+what features ought to be prioritized.
+
 ## Alternatives
 
 A new, external sampling profiler is not the only way to achieve live,
