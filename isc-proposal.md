@@ -487,6 +487,10 @@ What sort of things could come up that can delay or break the project?
     were to be the case, it should be possible to either fall back on
     R-only sampling or perform best-effort reconciliation.
 
+  - The current requirement to run the profiler with escalated
+    priviledges may hamper its adoption or the possible ergonomics for
+    end users.
+
   - Lastly, the project could face significant delays if project member
     Aaron Jacobs is unable to work on implementing the deliverables.
     Should this come to pass, it may be possible to scope out the
