@@ -19,7 +19,7 @@ Who are the people responsible for actually delivering the project if the propos
 
   - **Aaron Jacobs**, Data Scientist at Crescendo Technology
 
-## Contributors
+<!-- ## Contributors -->
 
 <!-- 
 Who are the people who have actively helped with this proposal but won't necessarily be on the core project team later?
