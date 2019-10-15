@@ -142,14 +142,14 @@ have:
     ability to [profile multiprocess-style parallel
     programs](https://github.com/r-prof/jointprof/issues/10).
 
-  - [Support for
-    Windows](https://github.com/r-prof/jointprof/issues/29); and
-
   - [Better profiling in the presence of R’s lazy
-    evaluation](https://github.com/r-prof/jointprof/issues/34).
+    evaluation](https://github.com/r-prof/jointprof/issues/34); and
 
-In addition, it would remove the need for end users to install and
-manage a Go toolchain.
+  - The possibility of [support for
+    Windows](https://github.com/r-prof/jointprof/issues/29).
+
+In addition, it could potentially remove the need for end users to
+install and manage a Go toolchain.
 
 ## Detail
 

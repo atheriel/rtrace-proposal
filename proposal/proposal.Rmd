@@ -27,12 +27,14 @@ project three desirable features that it does not currently have:
 * Support for profiling external R programs, which would unlock the ability to
   [profile multiprocess-style parallel programs](https://github.com/r-prof/jointprof/issues/10).
 
-* [Support for Windows](https://github.com/r-prof/jointprof/issues/29); and
+* [Better profiling in the presence of R's lazy
+  evaluation](https://github.com/r-prof/jointprof/issues/34); and
 
-* [Better profiling in the presence of R's lazy evaluation](https://github.com/r-prof/jointprof/issues/34).
+* The possibility of [support for
+  Windows](https://github.com/r-prof/jointprof/issues/29).
 
-In addition, it would remove the need for end users to install and manage a Go
-toolchain.
+In addition, it could potentially remove the need for end users to install and
+manage a Go toolchain.
 
 ## Detail
 <!--
