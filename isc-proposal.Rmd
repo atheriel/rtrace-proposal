@@ -1,7 +1,7 @@
 ---
 title: "ISC Proposal: An External R Sampling Profiler"
 author: "Aaron Jacobs"
-date: "`r Sys.Date()`"
+date: "`r format(as.Date('2019-10-14'))`"
 output: html_document
 ---
 
