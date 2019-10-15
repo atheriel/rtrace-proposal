@@ -231,7 +231,8 @@ what features ought to be prioritized.
 A new, external sampling profiler is not the only way to achieve live,
 opt-in profiling of running R programs. It would also be possible to
 modify R itself to switch on profiling in response to some kind of IPC,
-such as a Unix signal.
+such as a Unix signal. The authors have not raised this suggestion to
+the R developers, but it is still possible to do so.
 
 However, there are major drawbacks to such an undertaking: it would
 require modifying R itself, perhaps in ways that have an undesirable
